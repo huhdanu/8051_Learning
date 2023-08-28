@@ -1,0 +1,5 @@
+"main.obj",
+".\delay.obj",
+".\uart_mode1.obj" 
+TO "uart" 
+RAMSIZE(256) 

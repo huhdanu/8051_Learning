@@ -1,0 +1,64 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/18/2023 22:13:14 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <regx52.h>
+   2          #include "..\Lib\delay.h"
+   3          
+   4          #define LED_PORT P0
+   5          sbit LED_7Seg_1 = P2^1;
+   6          sbit LED_7Seg_2 = P2^0;
+   7          
+   8          unsigned char code Code7Seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   9          
+  10          void main()
+  11          {
+  12   1      //  P2 = 0x00;
+  13   1        while(1)
+  14   1        {
+  15   2          unsigned char chuc, dvi,dem;
+  16   2          unsigned int i;
+  17   2          
+  18   2          for(dem=0;dem<100;dem++)
+  19   2          {
+  20   3            dvi = dem%10;
+  21   3            chuc = dem/10;
+  22   3            // xoa so '0' hang chuc vo nghia
+  23   3            if(chuc == 0) chuc = 0xff;    
+  24   3            for(i=0;i<50;i++)   //lap lai doan CT delay 2ms de duoc 1s
+  25   3            {
+  26   4              //hien thi LED 7Seg hang don vi
+  27   4              LED_PORT = Code7Seg[dvi];
+  28   4              LED_7Seg_1 = 1;
+  29   4              delay_ms(1);
+  30   4              LED_7Seg_1 = 0;
+  31   4              
+  32   4              //hien thi LED 7Seg hang chuc
+  33   4              LED_PORT = Code7Seg[chuc];
+  34   4              LED_7Seg_2 = 1;
+  35   4              delay_ms(1);
+  36   4              LED_7Seg_2 = 0;
+  37   4            }
+  38   3          }
+  39   2        }
+  40   1      }
+  41            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     96    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

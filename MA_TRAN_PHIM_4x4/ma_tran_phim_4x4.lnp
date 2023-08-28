@@ -1,0 +1,4 @@
+"main.obj",
+".\delay.obj" 
+TO "ma_tran_phim_4x4" 
+RAMSIZE(256) 

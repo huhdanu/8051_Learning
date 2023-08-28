@@ -1,0 +1,7 @@
+"main.obj",
+".\uartmode1.obj",
+".\delay.obj" 
+TO "Uart_KeilC_support" 
+
+ru
+

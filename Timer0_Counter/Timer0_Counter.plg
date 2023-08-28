@@ -1,0 +1,226 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\4 years uni\8051\Timer0_Counter\Timer0_Counter.uvproj
+Project File Date:  07/29/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.h(5): error C129: missing ';' before '11059200'
+main.h(5): error C309: bad or missing filename
+main.h(5): warning C318: can't open file ''
+display_on_7segment.h(8): warning C315: unknown #directive 'enndif'
+main.c(18): warning C316: unterminated conditionals
+compiling delay.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.h(5): error C129: missing ';' before '11059200'
+main.h(5): error C309: bad or missing filename
+main.h(5): warning C318: can't open file ''
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(10): warning C280: 'low': unreferenced local variable
+main.c(10): warning C280: 'high': unreferenced local variable
+main.c(11): warning C280: 'number': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    ?CO?MAIN
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+Program Size: data=13.0 xdata=0 const=10 code=57
+"Timer0_Counter" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(23): warning C206: 'Display_7Segment': missing function-prototype
+main.c(23): error C267: 'Display_7Segment': requires ANSI-style prototype
+main.c(24): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    ?CO?MAIN
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=10 code=83
+Target not created
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    ?CO?MAIN
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=10 code=83
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    ?CO?MAIN
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=10 code=83
+Target not created
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    ?CO?MAIN
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=10 code=83
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=83
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=83
+Target not created
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    _DELAY_MS/DELAY
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=83
+Target not created
+Build target 'Target 1'
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=51
+Target not created
+Build target 'Target 1'
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=51
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 const=10 code=410
+creating hex file from "Timer0_Counter"...
+"Timer0_Counter" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 const=10 code=410
+creating hex file from "Timer0_Counter"...
+"Timer0_Counter" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 const=10 code=400
+creating hex file from "Timer0_Counter"...
+"Timer0_Counter" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=51
+Target not created
+Build target 'Target 1'
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=51
+Target not created
+Build target 'Target 1'
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Display_7segment
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 1000023H
+Program Size: data=13.0 xdata=0 const=0 code=51
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 const=10 code=400
+creating hex file from "Timer0_Counter"...
+"Timer0_Counter" - 0 Error(s), 0 Warning(s).

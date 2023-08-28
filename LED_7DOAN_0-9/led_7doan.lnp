@@ -1,0 +1,4 @@
+"main.obj",
+".\delay.obj" 
+TO "led_7doan" 
+RAMSIZE(256) 

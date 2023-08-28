@@ -1,0 +1,75 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/29/2023 07:44:24 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c OMF2 BROWSE DEBUG TABS(2)
+
+line level    source
+
+   1          #include "main.h"
+   2          
+   3          
+   4          void Delay_ms_Timer0(unsigned int t)
+   5          {
+   6   1      //  unsigned int cnt;       //cnt 16bit 
+   7   1      //  do
+   8   1      //  {
+   9   1      //    TL0 = 0;
+  10   1      //    TH0 = 0;
+  11   1      //    TR0 = 1;                //Timer0 bat dau dem
+  12   1      //    do
+  13   1      //    {
+  14   1      //      cnt = TH0;
+  15   1      //      cnt <<= 8;            //dich sang trai 8 bit
+  16   1      //      cnt |= TL0;           //cnt = TH0 TL0
+  17   1      //    }while(cnt <= 1000);
+  18   1      //    TR0 = 0;                //Timer0 ngung dem
+  19   1      //    t--;
+  20   1      //  }while(t!=0);
+  21   1        
+  22   1        //su dung overflag dem 1000 xung, set ban dau la 64536 chuyen sang hex -> 0xFC18 su dung cho THACH ANH 12
+             -M
+  23   1        //voi THACH ANH 11059200Hz thi qua bo chia 12 la 921600, nen muon dem 1ms thi can 922 xung -> 65536-922=6
+             -4614 <=> 0xFC66
+  24   1        do{
+  25   2          TL0 = 0x66;
+  26   2          TH0 = 0xFC;
+  27   2          TR0 = 1;                  //timer0 bat dau dem
+  28   2          while(!TF0);
+  29   2          TR0 = 0;                  //timer0 ngung dem
+  30   2          TF0 = 0;
+  31   2          
+  32   2          t--;
+  33   2        }while(t!=0);
+  34   1      }
+  35          void main()
+  36          {
+  37   1        // chon mode cho T0
+  38   1        TMOD = (TMOD&0xF0) | 0x01;  //xoa cac bit dk cua T0 roi chon lai mode 1 cho timer0
+  39   1        while(1)
+  40   1        {
+  41   2          P2_0 = !P2_0;
+  42   2          Delay_ms_Timer0(1000);  //1000ms
+  43   2        }
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     44    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.52.0.0   MAIN                                                              07/29/2023 07:44:24 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

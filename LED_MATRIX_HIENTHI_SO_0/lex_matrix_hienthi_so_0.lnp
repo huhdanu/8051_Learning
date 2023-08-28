@@ -1,0 +1,4 @@
+"main.obj",
+".\delay.obj" 
+TO "lex_matrix_hienthi_so_0" 
+RAMSIZE(256) 

@@ -1,0 +1,1 @@
+"..\Lib\uart_mode1.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\uart_mode1.lst) TABS (2) OBJECT(.\uart_mode1.obj)

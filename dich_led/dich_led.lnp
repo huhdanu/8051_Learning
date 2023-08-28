@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"main.obj",
+".\delay.obj" 
+TO "dich_led" 
+RAMSIZE(256) 

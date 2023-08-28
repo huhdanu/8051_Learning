@@ -1,0 +1,60 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/29/2023 14:37:03 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c OMF2 BROWSE DEBUG TABS(2)
+
+line level    source
+
+   1          #include "main.h"
+   2          
+   3          void Delay_1s()
+   4          {
+   5   1        unsigned char i;
+   6   1        TR2 = 1;            //Timer2 bat dau hoat dong
+   7   1        for (i=0;i<20;i++)  //dem den 50ms thi tran nen dem 20 vong de duoc 1s
+   8   1        {
+   9   2          while(!TF2);      //cho set len 1 khi Overflow
+  10   2          TF2 = 0;
+  11   2        }
+  12   1        TR2 = 0;
+  13   1      }
+  14          void main()
+  15          {
+  16   1        //set up timer 2 tu dong nap lai, 16 bit
+  17   1        T2CON = 0x00;
+  18   1        T2MOD = 0x00;
+  19   1        
+  20   1        //dem 1 lan 50ms nen can dem 46080 xung, gia tri khoi tao la 19456 -> 0x4C00
+  21   1        TH2 = 0x4C;
+  22   1        TL2 = 0x00;
+  23   1        
+  24   1        //ghi gia tri thanh ghi tu dong nap lai khi Overflow
+  25   1        RCAP2H = 0x4C;
+  26   1        RCAP2L = 0x00;
+  27   1        
+  28   1        while(1)
+  29   1        {
+  30   2          P2 = ~P2;
+  31   2          Delay_1s();
+  32   2        }
+  33   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     39    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

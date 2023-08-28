@@ -1,0 +1,83 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/18/2023 21:16:48 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <regx52.h>
+   2          #include "..\Lib\delay.h"
+   3          #define OUT_PORT P0
+   4          
+   5          sbit BTN = P2^0;  //define for BUTTON
+   6          sbit LED = P2^1;  //define for LED
+   7          
+   8          unsigned char code Code7Seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   9          
+  10          //CT thuc thi sau khi nha BUTTON
+  11          //void main()
+  12          //{
+  13          //  BTN = 0;
+  14          //  OUT_PORT = Code7Seg[0];   //hien thi trang thai dau la so '0'
+  15          //  LED = 0;
+  16          //  while(1)
+  17          //  {
+  18          //    unsigned int dem;
+  19          //    if (BTN == 1)
+  20          //    {
+  21          //      delay_ms(20);
+  22          //      if (BTN == 1)
+  23          //      {
+  24          //        while(BTN) LED = 1;
+  25          //        LED = 0;
+  26          //        dem++;
+  27          //        if(dem == 10) dem = 0;
+  28          //        OUT_PORT = Code7Seg[dem];
+  29          //      }
+  30          //    }
+  31          //  }
+  32          //}
+  33          
+  34          //CT thuc thi khi nhan BUTTON
+  35          
+  36          void main()
+  37          {
+  38   1        BTN = 0;
+  39   1        OUT_PORT = Code7Seg[0];   //hien thi trang thai dau la so '0'
+  40   1        LED = 0;
+  41   1        while(1)
+  42   1        {
+  43   2          unsigned int dem;
+  44   2          if (BTN == 1)
+  45   2          {
+  46   3            delay_ms(20);
+  47   3            if (BTN == 1)
+  48   3            {
+  49   4              LED = 1;
+  50   4              dem++;
+  51   4              if(dem == 10) dem = 0;
+  52   4              OUT_PORT = Code7Seg[dem];
+  53   4              while (BTN);
+  54   4            }
+  55   3          }
+C51 COMPILER V9.52.0.0   MAIN                                                              07/18/2023 21:16:48 PAGE 2   
+
+  56   2          else LED = 0;
+  57   2        }
+  58   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

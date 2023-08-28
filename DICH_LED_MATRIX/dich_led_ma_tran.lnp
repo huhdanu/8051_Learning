@@ -1,0 +1,4 @@
+"main.obj",
+".\delay.obj" 
+TO "dich_led_ma_tran" 
+RAMSIZE(256) 

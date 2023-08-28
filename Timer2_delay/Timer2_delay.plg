@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\4 years uni\8051\Timer2_delay\Timer2_delay.uvproj
+Project File Date:  07/29/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(25): error C202: 'RCAPH2': undefined identifier
+main.c(26): error C202: 'RCAPL2': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 const=0 code=54
+creating hex file from "Timer2_delay"...
+"Timer2_delay" - 0 Error(s), 0 Warning(s).

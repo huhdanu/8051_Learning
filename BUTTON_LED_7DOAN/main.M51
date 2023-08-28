@@ -1,0 +1,114 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/18/2023  21:16:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj, .\delay.obj TO main RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  .\delay.obj (DELAY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  main (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0045H     UNIT         ?PR?MAIN?MAIN
+            CODE    0048H     0020H     UNIT         ?PR?_DELAY_MS?DELAY
+            CODE    0068H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0074H     000AH     UNIT         ?CO?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   main (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0002H
+  +--> ?CO?MAIN
+  +--> ?PR?_DELAY_MS?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  main (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/18/2023  21:16:48  PAGE 2
+
+
+  C:0074H         PUBLIC        Code7Seg
+  B:00A0H.1       PUBLIC        LED
+  B:00A0H.0       PUBLIC        BTN
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        dem
+  -------         ENDDO         
+  C:0003H         LINE#         36
+  C:0003H         LINE#         37
+  C:0003H         LINE#         38
+  C:0005H         LINE#         39
+  C:000CH         LINE#         40
+  C:000EH         LINE#         41
+  C:000EH         LINE#         42
+  C:000EH         LINE#         44
+  C:0011H         LINE#         45
+  C:0011H         LINE#         46
+  C:0018H         LINE#         47
+  C:001BH         LINE#         48
+  C:001BH         LINE#         49
+  C:001DH         LINE#         50
+  C:0025H         LINE#         51
+  C:002FH         LINE#         52
+  C:003FH         LINE#         53
+  C:0044H         LINE#         56
+  C:0046H         LINE#         57
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0048H         PUBLIC        _delay_ms
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0048H         LINE#         3
+  C:0048H         LINE#         4
+  C:0048H         LINE#         6
+  C:0052H         LINE#         7
+  C:0052H         LINE#         8
+  C:0060H         LINE#         9
+  C:0067H         LINE#         10
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY
+
+Program Size: data=11.0 xdata=0 code=126
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

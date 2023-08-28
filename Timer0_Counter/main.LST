@@ -1,0 +1,91 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/29/2023 10:59:22 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c OMF2 BROWSE DEBUG TABS(2)
+
+line level    source
+
+   1          #include "main.h"
+   2          #include "display_on_7segment.h"
+   3          #include "..\Lib\delay.h"
+   4          
+   5          unsigned char code Code7Seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   6          
+   7          
+   8          void Display_7segment(unsigned int b)
+   9          {
+  10   1        unsigned tr_ng,ch_ng,tr,ch,dvi;
+  11   1        tr_ng = b/10000;
+  12   1        ch_ng = b/1000%10;
+  13   1        tr = b/100%10;
+  14   1        ch = b%100/10;
+  15   1        dvi = b%10;
+  16   1        
+  17   1        //use PORT0 to display on 7segment and use PORT3 to control on_off 7segment
+  18   1        P0 = Code7Seg[dvi];
+  19   1        P2_0 = 1;
+  20   1        delay_ms(1);
+  21   1        P2_0 = 0;
+  22   1        
+  23   1        P0 = Code7Seg[ch];
+  24   1        P2_1 = 1;
+  25   1        delay_ms(1);
+  26   1        P2_1 = 0;
+  27   1        
+  28   1        P0 = Code7Seg[tr];
+  29   1        P2_2 = 1;
+  30   1        delay_ms(1);
+  31   1        P2_2 = 0;
+  32   1        
+  33   1        P0 = Code7Seg[ch_ng];
+  34   1        P2_3 = 1;
+  35   1        delay_ms(1);
+  36   1        P2_3 = 0;
+  37   1        
+  38   1        P0 = Code7Seg[tr_ng];
+  39   1        P2_4 = 1;
+  40   1        delay_ms(1);
+  41   1        P2_4 = 0;
+  42   1      
+  43   1      }
+  44          
+  45          void main()
+  46          {
+  47   1        unsigned char low, high;
+  48   1        unsigned int number;
+  49   1        
+  50   1        TMOD = (TMOD&0xF0)|0x05;      //xxxx 0101 su dung Counter va dinh thoi Timer0
+  51   1        TR0 = 1;                      //Timer0 bat dau dem
+  52   1        while(1)
+  53   1        {
+  54   2            do{
+  55   3              high = TH0;
+C51 COMPILER V9.52.0.0   MAIN                                                              07/29/2023 10:59:22 PAGE 2   
+
+  56   3              low = TL0;
+  57   3            }while(high != TH0);
+  58   2            
+  59   2            number = (high<<8)|low;
+  60   2            Display_7segment(number);
+  61   2        }
+  62   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    268    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

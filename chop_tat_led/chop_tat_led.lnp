@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"main.obj" 
+TO "chop_tat_led" 
+RAMSIZE(256) 
